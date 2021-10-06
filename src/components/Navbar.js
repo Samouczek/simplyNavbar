@@ -19,17 +19,40 @@ const Navbar = ({logged, onDaneLogged}) => {
             <nav className='navigation'>
                 <ul className ='menu menu-left'>
                     <li className='menu-left-item menu-left-logo'>
-                        <div className='menu-left-logo-frame'> <div className='menu-left-logo-circle'> </div></div>
+                        <div className='menu-left-logo__frame'>
+                            <div className='menu-left-logo-circle'> </div>
+
+                        </div>
                     </li>
                     <li className='menu-item menu-left-item'>Wydarzenia</li>
                     <li className='menu-item menu-left-item'>Konatkt</li>
                     <li className='menu-left-item'>Wesprzyj Nas</li>
                 </ul>
                 <ul className ='menu menu-right'>
-                    <li className='menu-item menu-right-item menu-right-search-icon'><MdSearch /></li>
-                    {account && <li className='menu-item menu-right-item menu-right-notifications-icon'><MdNotificationsNone /></li>}
-                    {account && <li className='menu-item menu-right-account-item'><MdAccountCircle /></li>}
-                    {!account && <li className='menu-item menu-right-item menu-right-search-icon' onClick={handleOnClick}>Zaloguj</li>}
+                    <li className='menu-item menu-right-item'>
+                        <MdSearch  className='menu-right-item__search'/>
+                    </li>
+                    {
+                        account
+                        &&
+                        <li className='menu-item menu-right-item'>
+                            <MdNotificationsNone className='menu-right-item__notifications'/>
+                        </li>
+                    }
+                    {
+                        account
+                        &&
+                        <li className='menu-item menu-right-item'>
+                            <MdAccountCircle className='menu-right-item__account'/>
+                        </li>
+                    }
+                    {
+                        !account
+                        &&
+                        <li className='menu-item menu-right-item menu-right-item__log-in' onClick={handleOnClick}>
+                            Zaloguj
+                        </li>
+                    }
                 </ul>
             </nav>
         </div>
