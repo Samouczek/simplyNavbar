@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Switch>
             <Route exact path="/">
-                <Navbar logged={false} onDaneLogged={handleLoggedDone}/>
+                <Navbar logged={logged} onDaneLogged={handleLoggedDone}/>
             </Route>
         </Switch>
       </BrowserRouter>
